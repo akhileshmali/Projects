@@ -2,8 +2,8 @@
 
 ### Clone the repository:
 ```
-git clone <repository_url>
-cd <repository_name>
+git clone https://github.com/akhileshmali/Projects.git
+cd Projects/ImageToText
 ```
 ### Install dependencies:
 ```
