@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image to Text</title>
+
+    <style>
+      h1 {
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+      }
+      h2 {
+        text-align: center;
+      }
+      h3 {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("background.avif");
+        background-color: aquamarine;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .upload-form {
+        left: 30%;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 380px;
+        text-align: center;
+      }
+      .upload-form h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      .upload-form input[type="file"] {
+        display: block;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        width: 100%;
+      }
+      .upload-form input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+      }
+      .upload-form input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><strong>&emsp;Image-to-Text: Upload & Describe</strong></h1>
+    </header>
+    <section>
+      <br /><br /><br /><br /><br /><br />
+      <h3>
+        The Flask Image Upload and Description project is designed to provide a
+        seamless solution for handling image uploads, generating textual
+        descriptions for images, and displaying uploaded images along with their
+        descriptions. This project utilizes Python and Flask for server-side
+        development, along with the Hugging Face transformers library for
+        implementing the image-to-text pipeline.
+      </h3>
+      <br /><br />
+      <center>
+        <div class="upload-form">
+          <h2>Upload an Image</h2>
+          <form
+            action="http://localhost:5000/upload"
+            enctype="multipart/form-data"
+            method="POST"
+          >
+            <input type="file" name="pic" required />
+            <input type="submit" value="Upload a file" />
+          </form>
+        </div>
+      </center>
+      <h2><strong>Features</strong></h2>
+      <h3>
+        <ul>
+          <li>
+            Image Upload and Text Generation: Our website allows users to easily
+            upload images, which are then processed using the Hugging Face
+            image-to-text pipeline to generate descriptive text for each image.
+            The generated text is stored in a SQLite database, enabling
+            efficient retrieval and management of image data.
+          </li>
+          <li>
+            Display Uploaded Images and Texts: Using our website, users can
+            retrieve and view all uploaded images along with their associated
+            text descriptions. The API provides a clear and structured response,
+            making it easy to access and display image data in applications or
+            websites.
+          </li>
+          <li>
+            Efficient Text Retrieval for Repeated Images: As a bonus feature,
+            our API includes functionality to efficiently handle repeated image
+            uploads. By checking for duplicate images based on file paths or
+            content hashes, the API can retrieve and return stored text
+            descriptions from the database for duplicate images, eliminating the
+            need for redundant processing.
+          </li>
+        </ul>
+        Contact Us<br />
+        If you have any questions, feedback, or suggestions, please don't
+        hesitate to contact us. We're here to help and are always eager
+        to hear from you!
+      </h3>
+      <footer style="text-align: center">Created by Akhilesh Mali</footer>
+    </section>
+  </body>
+</html>
